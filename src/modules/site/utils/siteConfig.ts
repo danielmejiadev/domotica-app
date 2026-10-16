@@ -23,3 +23,6 @@ export const NAVIGATION_LINKS: NavigationLink[] = [
 ];
 
 export const SCHEDULE_PATH = "/agendar";
+
+// Static export (GitHub Pages) has no API, so the lead form is hidden.
+export const IS_STATIC_EXPORT = process.env.NEXT_PUBLIC_STATIC_EXPORT === "true";

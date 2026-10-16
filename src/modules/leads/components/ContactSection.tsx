@@ -1,5 +1,6 @@
 import { ButtonExternalLink } from "@/components/ui/Button";
 import { Icon, WhatsappIcon, type IconName } from "@/components/ui/Icon";
+import { IS_STATIC_EXPORT } from "@/modules/site/utils/siteConfig";
 import { buildWhatsappUrl } from "@/modules/site/utils/whatsapp";
 import { LeadForm } from "./LeadForm";
 
@@ -12,7 +13,9 @@ const PROMISES: { icon: IconName; text: string }[] = [
 export function ContactSection() {
   return (
     <section id="agendar" className="scroll-mt-20 bg-night">
-      <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-[1fr_1.15fr] lg:items-center">
+      <div
+        className={`mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:items-center ${IS_STATIC_EXPORT ? "" : "lg:grid-cols-[1fr_1.15fr]"}`}
+      >
         <div className="flex flex-col gap-7">
           <span className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">Agenda tu asesoría</span>
           <h2 className="text-3xl leading-tight font-semibold text-night-ink md:text-5xl">
@@ -39,9 +42,11 @@ export function ContactSection() {
           </div>
         </div>
 
-        <div id="formulario" className="scroll-mt-24">
-          <LeadForm />
-        </div>
+        {!IS_STATIC_EXPORT && (
+          <div id="formulario" className="scroll-mt-24">
+            <LeadForm />
+          </div>
+        )}
       </div>
     </section>
   );
