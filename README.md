@@ -1,59 +1,59 @@
-# Hogaria — sitio de domótica a la medida
+# Hogaria — custom home automation website
 
-Sitio web de Hogaria: servicio de domótica (casas inteligentes) en Colombia
-para casas, apartamentos, negocios y oficinas — desde automatizar un par de
-luces hasta un inmueble completo. El sitio explica un mercado que la gente
-aún no conoce, guía a elegir según el presupuesto y capta solicitudes por
-WhatsApp o por formulario.
+Website for Hogaria, a Colombian home automation (domótica) company serving
+houses, apartments, businesses, and offices — from automating a couple of
+lights up to a full smart building. The site explains a market people in the
+region barely know, helps visitors pick the right option for their budget, and
+captures leads through WhatsApp or a form.
 
-Ver `AGENTS.md` para las convenciones de código, la arquitectura de capas
-(Server Components + `services/` + Route Handlers), el design kit y las
-reglas de contenido (todo en español, sin precios) — aplican siempre, sin
-excepción.
+See `AGENTS.md` for the code conventions, the layered architecture (Server
+Components + `services/` + Route Handlers), the design kit, and the content
+rules (all user-facing copy in Spanish, no prices) — they always apply, without
+exception.
 
 ## Stack
 
 - Next.js 16 (App Router), React 19, TypeScript
-- Tailwind CSS v4, design kit propio en `src/styles/`
-- Supabase (Postgres, Auth) — ver `src/lib/supabaseClient.ts`
-- `@base-ui/react` como base de accesibilidad para Modal/Select/Toast/Accordion
-- `react-hook-form` + `zod` para formularios, `@tanstack/react-query` para
-  datos que el cliente pide después de la carga inicial
-- Despliegue en Cloudflare Workers vía `@opennextjs/cloudflare`
+- Tailwind CSS v4, custom design kit in `src/styles/`
+- Supabase (Postgres, Auth) — see `src/lib/supabaseClient.ts`
+- `@base-ui/react` as the accessibility foundation for Modal/Select/Toast/Accordion
+- `react-hook-form` + `zod` for forms, `@tanstack/react-query` for data the
+  client fetches after the initial load
+- Deployed to Cloudflare Workers via `@opennextjs/cloudflare`
 
-## Qué hay
+## What's in it
 
-- `/` — landing: por qué domótica, soluciones, qué se puede automatizar,
-  mitos vs. realidad, un día en un espacio inteligente, niveles (sin
-  precios), guía rápida, cómo trabajamos, preguntas frecuentes y contacto.
-- `/por-que-domotica` — explicación para quien no conoce el tema.
-- `/soluciones/[casas|negocios|oficinas]` — una página por tipo de espacio.
-- `/agendar` — WhatsApp + formulario (`POST /api/v1/leads`).
-- `/admin` — panel (magic link) para ver y gestionar las solicitudes.
-- `/creditos` — créditos de las imágenes (Wikimedia Commons, licencia libre).
+- `/` — landing: why home automation, solutions, what can be automated, myths
+  vs. reality, a day in a smart space, service levels (no prices), quick
+  guide, how we work, FAQ, and contact.
+- `/por-que-domotica` — explainer for people new to the topic.
+- `/soluciones/[casas|negocios|oficinas]` — one page per type of space.
+- `/agendar` — WhatsApp + form (`POST /api/v1/leads`).
+- `/admin` — magic-link dashboard to view and manage leads.
+- `/creditos` — image credits (Wikimedia Commons, free licenses).
 
-## Desarrollo local
+## Local development
 
 ```bash
 pnpm install
-cp .env.local.example .env.local   # y llenar con las keys de tu proyecto Supabase
+cp .env.local.example .env.local   # then fill in your Supabase project keys
 cp .dev.vars.example .dev.vars
 pnpm dev
 ```
 
-El sitio se ve sin Supabase configurado; el formulario y el panel
-necesitan un proyecto real con la migración
-`supabase/migrations/0001_create_leads_schema.sql` aplicada. El primer
-usuario del panel se vincula a mano:
+The site renders without Supabase configured; the form and the admin
+dashboard need a real project with the
+`supabase/migrations/0001_create_leads_schema.sql` migration applied. The
+first admin user is linked by hand:
 
 ```sql
-insert into public.staff_members (user_id) values ('<uuid del usuario en auth.users>');
+insert into public.staff_members (user_id) values ('<uuid of the user in auth.users>');
 ```
 
-## Pendiente antes de publicar
+## To do before launch
 
-- Reemplazar en `src/modules/site/utils/siteConfig.ts` el número de WhatsApp
-  y el correo (hoy son placeholders).
-- Crear el proyecto Supabase, aplicar la migración y regenerar
+- Replace the WhatsApp number and email in
+  `src/modules/site/utils/siteConfig.ts` (currently placeholders).
+- Create the Supabase project, apply the migration, and regenerate
   `src/lib/database.types.ts`.
-- Apuntar `.mcp.json` al `project_ref` del nuevo proyecto.
+- Point `.mcp.json` at the new project's `project_ref`.
