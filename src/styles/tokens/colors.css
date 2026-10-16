@@ -1,0 +1,29 @@
+@theme inline {
+  --color-bg: #faf7f2;
+  --color-surface: #ffffff;
+  --color-surface-2: #f1ece3;
+  --color-ink: #14181c;
+  --color-ink-dim: #4f5861;
+  --color-ink-faint: #858d95;
+  --color-line: #e5ded2;
+  --color-line-strong: #cfc5b4;
+
+  /* Dark sections (hero, night scenes): the "lights off" counterpart of the warm paper background. */
+  --color-night: #0d1117;
+  --color-night-2: #161c25;
+  --color-night-line: #263040;
+  --color-night-ink: #f4efe6;
+  --color-night-ink-dim: #a9b2bf;
+
+  /* Amber glow = a light turning on. accent is for fills/decoration; accent-ink is the darker shade that passes contrast as text on paper. */
+  --color-accent: #f2a93b;
+  --color-accent-strong: #e08e12;
+  --color-accent-ink: #8f5200;
+  --color-whatsapp: #1fa855;
+  --color-whatsapp-strong: #178a45;
+
+  /* Semantic colors for status/errors/warnings — never repurpose as decoration. */
+  --color-danger: #b3261e;
+  --color-success: #1f7a4d;
+  --color-warning: #a15c00;
+}
