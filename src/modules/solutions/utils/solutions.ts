@@ -28,8 +28,8 @@ export const SOLUTIONS: Solution[] = [
     name: "Casas y apartamentos",
     headline: "Una casa que se adapta a tu forma de vivir.",
     summary: "Desde controlar un par de luces hasta una casa que se acomoda sola a cada momento del día.",
-    image: "/images/casa-sala.jpg",
-    imageAlt: "Sala luminosa y moderna con sofá azul",
+    image: "/images/casa-timbre.jpg",
+    imageAlt: "Timbre con cámara y cerradura en la puerta de entrada de una casa",
     intro:
       "Tu casa debería trabajar para ti, no al revés. Automatizamos desde lo más sencillo hasta la vivienda completa, siempre empezando por lo que más te importa.",
     benefits: [
@@ -52,8 +52,8 @@ export const SOLUTIONS: Solution[] = [
     name: "Negocios y locales",
     headline: "Menos gastos, más control, mejor experiencia para tus clientes.",
     summary: "Restaurantes, tiendas, consultorios, hoteles y hospedajes que se administran de forma más inteligente.",
-    image: "/images/negocio-restaurante.jpg",
-    imageAlt: "Restaurante moderno con mesa servida y paredes de madera",
+    image: "/images/negocio-asistentes.jpg",
+    imageAlt: "Asistentes de voz y pantalla inteligente sobre una mesa",
     intro:
       "En un negocio cada detalle cuenta: el ambiente, el consumo de energía y la seguridad. La domótica te ayuda a cuidar los tres sin depender de que alguien se acuerde de apagar o cerrar.",
     benefits: [
@@ -76,8 +76,8 @@ export const SOLUTIONS: Solution[] = [
     name: "Oficinas",
     headline: "Espacios de trabajo cómodos y eficientes.",
     summary: "Salas de reuniones, consultorios y oficinas que se ajustan solos y cuidan tu energía.",
-    image: "/images/oficina-consultorio.jpg",
-    imageAlt: "Oficina moderna y luminosa con escritorio",
+    image: "/images/oficina-panel.png",
+    imageAlt: "Panel de control de domótica con luces, persianas, clima y consumo de energía",
     intro:
       "Una oficina cómoda se nota en el ánimo y en la productividad. Automatizamos clima, luz y accesos para que el espacio esté listo cuando tu equipo llega y se apague cuando se va.",
     benefits: [

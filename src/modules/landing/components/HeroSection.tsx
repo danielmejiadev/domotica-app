@@ -13,12 +13,12 @@ export function HeroSection() {
   return (
     <section className="relative isolate overflow-hidden bg-night">
       <Image
-        src="/images/hero-sala.jpg"
+        src="/images/hero-luces.jpg"
         alt=""
         fill
         priority
         sizes="100vw"
-        className="-z-20 object-cover opacity-45"
+        className="-z-20 object-cover object-right opacity-80"
       />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-night via-night/85 to-night/30" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-night via-transparent to-transparent" />
